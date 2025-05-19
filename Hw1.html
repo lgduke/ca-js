@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="Hw1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+    <body>
+        <div id="alert1" class="alert-box">
+            Enter ID           
+        </div>
+        <div id="alert2" class="alert-box">
+            Enter password           
+        </div>
+        <button onclick="manageAlert('alert1', 'block','alert2','none')">enter ID</button>
+        <button onclick="manageAlert('alert2', 'block','alert1','none')">Password</button>
+        
+
+        
+        <script>
+            function manageAlert(para1, para2, para3, para4 ) {
+                alert("Button is clicked");
+                document.getElementById(para1).style.display=para2;
+                document.getElementById(para3).style.display=para4;
+                
+            }
+        </script>
+        
+    </body>
+</html>

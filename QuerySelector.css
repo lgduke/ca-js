@@ -1,0 +1,13 @@
+
+.list-group {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.sample {
+    display: none;
+    background-color: aqua;
+}

@@ -1,0 +1,12 @@
+
+
+.hello {
+    display: block;
+    background-color: aqua;
+}
+
+.show {
+    display: none;
+    background-color: green;
+}
+

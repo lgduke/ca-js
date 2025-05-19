@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="Hw1-sol.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+    <body>
+        <div id="alert1" class="alert-box">
+            <p id="alert2">Nothing</p>   
+            <button id="close">Close</button>       
+        </div>
+
+        <button onclick="manageAlert('Enter ID')">enter ID</button>
+        <button onclick="manageAlert('Enter Password')">Password</button>
+        
+        <script>
+            document.getElementById('close').addEventListener('click',function(){
+                alert("Button is clicked");
+                document.getElementById('alert1').style.display = 'none';
+            });
+            
+            function manageAlert(para1) {
+                alert("Button is clicked");
+                document.getElementById('alert2').innerHTML = para1;
+                document.getElementById('alert1').style.display = 'block';                
+            }
+        </script>
+    </body>
+</html>
