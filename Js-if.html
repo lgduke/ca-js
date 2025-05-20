@@ -35,18 +35,50 @@
         <div class="black-bg">
           <div class="white-bg">
             <h4>로그인하세요</h4>
-            <button class="btn btn-danger">닫기</button>
+            <form id="form1" action="Success.html">
+              <div class="my-3">
+                <input type="text" id="input1" class="form-control">
+               </div>
+               <div class="my-3">
+                 <input type="password" id="input2" class="form-control">
+               </div>
+               <button type="submit" class="btn btn-primary" id="trans">전송</button>
+               <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form> 
           </div>
         </div>           
         
         <script>
-
+            
+            //document.getElementById('input1').value;
+            
+            $('#trans').on('click',function(){
+                alert("Button is clicked");
+                if($('#input1').val() == "") {
+                    alert("You should enter something");  
+                    $("#form1").attr("action", "");
+                    
+                }
+                else {
+                    alert('You enter someting',$('#input1').val())
+                }
+              
+                
+            })  
+            
             $('#login').on('click',function(){
                 alert("Button is clicked");
                 $('.black-bg').addClass('show-modal');
                 alert("Button is after clicked");                
                 
             })    
+            $('#close').on('click',function(){
+                alert("Button is clicked");
+                $('.black-bg').removeClass('show-modal');
+                alert("Button is after clicked");                
+                
+            })              
+            
             //$('.btn-danger').on('click',function(){
             //    $('.black-bg').removeClass('show-modal');
             //})            
