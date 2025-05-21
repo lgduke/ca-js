@@ -53,18 +53,22 @@
             //document.getElementById('input1').value;
             
             $('#trans').on('click',function(){
-                alert("Button is clicked");
-                if($('#input1').val() == "") {
-                    alert("You should enter something");  
-                    $("#form1").attr("action", "");
-                    
-                }
-                else {
-                    alert('You enter someting',$('#input1').val())
-                }
+              alert("Button is clicked");
+              var content = $('#input2').val();
               
-                
+              if($('#input1').val() == "" || $('#input2').val() == "") {
+                  alert("You should enter something");  
+                  $("#form1").attr("action", "");
+                  
+              } else if(content.length < 6) {
+                  alert("You should enter longer");  
+                  $("#form1").attr("action", "");                  
+              }
+              else {
+                  alert('You enter someting')
+              }
             })  
+
             
             $('#login').on('click',function(){
                 alert("Button is clicked");
@@ -87,7 +91,12 @@
                 document.querySelectorAll('.list-group')[0].classList.toggle('d-none');
             })
             
-
+            function sleep(ms) {
+              const wakeUpTime = Date.now() + ms;
+              while (Date.now() < wakeUpTime) {}
+            }
+            
+            
         </script>
        
        
