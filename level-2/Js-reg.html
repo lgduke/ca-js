@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="Js-reg.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
+       
+       <nav class="navbar navbar-light bg-light">
+           <div class="container-fluid">
+               <span class="navbar-brand">Navbar</span>
+               <button id="badge" class="btn btn-danger">
+                    <span class="badge bg-dark">Dark 🔄</span>
+                </button>
+               <!-- <span class="badge bg-dark">Dark 🔄</span>    -->
+
+               <button class="navbar-toggler" type="button">
+                   <span class="navbar-toggler-icon"></span>
+                </button>
+          </div>
+        </nav> 
+
+        <ul class="list-group d-none">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+          <li class="list-group-item">A fourth item</li>
+          <li class="list-group-item">And a fifth one</li>
+        </ul> 
+
+        
+        <div class="main-bg">
+            <h4>Shirts On Sale</h4>
+            <button id="login" class="btn btn-danger">Login</button>
+        </div>
+ 
+        <div class="black-bg">
+          <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <form id="form1" action="Success.html">
+              <div class="my-3">
+                <input type="text" id="input1" class="form-control">
+               </div>
+               <div class="my-3">
+                 <input type="password" id="input2" class="form-control">
+               </div>
+               <button type="submit" class="btn btn-primary" id="trans">전송</button>
+               <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form> 
+          </div>
+        </div> 
+       
+        
+        <script>
+            //document.getElementById('input1').value;
+            
+            var count = 0;
+            
+            $('.badge').on('click', function(){
+                count += 1;
+                alert("New Button is clicked");
+                if (count%2 == 1) {
+                    //$('.badge').addClass('bg-light');
+                    $('.badge').html('Light 🔄');
+                } else {
+                    //$('.badge').addClass('bg-dark');
+                    $('.badge').html('Dark 🔄');
+                }
+                console.log(count);
+            });
+
+            
+            $('#trans').on('click',function(){
+              alert("Button is clicked");
+              var content1 = $('#input1').val();                
+              var content2 = $('#input2').val();
+
+              if(content1 == "" || content2 == "") {
+                  alert("You should enter something");  
+                  $("#form1").attr("action", "");
+
+              } else if(content2.length < 6) {
+                  alert("You should enter longer");  
+                  $("#form1").attr("action", "");                  
+              }
+              else {
+                  alert('You enter someting')
+              }
+              //if (/\S+@\S+\.\S+/.test(content1)){
+              //    alert("You have got wrong Email")
+              //}
+            })  
+            
+            $('form').on('submit',function(e){
+                var content1 = $('#input1').val();     
+                var content2 = $('#input2').val();                     
+                console.log(content1)
+                console.log(content2)
+                alert("Check email, passwd")
+                if ( /\S+@\S+\.\S+/.test(content1) ){
+                    alert("You have got right Email");
+                } else {
+                    alert("You have got wrong Email");
+                    e.preventDefault();                    
+                }
+                if ( /[A-Z]/.test(content2) ){
+                    alert("You have got right Passwd");
+                } else {
+                    alert("You have got wrong Passwd");
+                    e.preventDefault();                    
+                }                
+                
+            });
+            
+
+
+            
+            $('#login').on('click',function(){
+                alert("Button is clicked");
+                $('.black-bg').addClass('show-modal');
+                alert("Button is after clicked");                
+                
+            })    
+            $('#close').on('click',function(){
+                alert("Button is clicked");
+                $('.black-bg').removeClass('show-modal');
+                alert("Button is after clicked");                
+                
+            })              
+            
+            //$('.btn-danger').on('click',function(){
+            //    $('.black-bg').removeClass('show-modal');
+            //})            
+            
+            document.querySelector('.navbar-toggler').addEventListener('click', function(){ 
+                document.querySelectorAll('.list-group')[0].classList.toggle('d-none');
+            })
+            
+            function sleep(ms) {
+              const wakeUpTime = Date.now() + ms;
+              while (Date.now() < wakeUpTime) {}
+            }
+            
+            
+        </script>
+       
+       
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+       
+       </body>
+</html>

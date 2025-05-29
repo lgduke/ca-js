@@ -9,9 +9,6 @@
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
        
-
-        
-
         <div class="black-bg">
           <div class="white-bg">
             <h4>로그인하세요</h4>
@@ -19,7 +16,7 @@
               <div class="my-3">
                 <input type="text" id="input1" class="form-control">
                </div>
-               </div>
+               
                <button type="submit" class="btn btn-primary" id="trans">전송</button>
                <button type="button" class="btn btn-danger" id="close">닫기</button>
             </form> 
@@ -45,18 +42,19 @@
 
             function game369(ms) {
               const value = ms % 3;
-              if (value == 0) {
+              const value2 = ms % 9;
+              if (value2 == 0) {
+                alert('Clap2 Clap2 Clap2')
+              } else if (value == 0) {
                 alert('Clap Clap Clap')
-              } else {
+              }
+              else {
                 alert('Pass Pass Pass')
               }
             }
             
             
         </script>
-       
-       
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-       
        </body>
 </html>
