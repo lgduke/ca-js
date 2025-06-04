@@ -25,7 +25,7 @@
   /* vw는 브라우저 폭을 이애기한다. 브라우저 폭 = 100vw */
   /*margin-left: -100vw;*/
   transition: all 1s;
-  /*transform: translateX(-100vw);*/
+  /*transform: translateX(-200vw);*/
 }
 .slide-box {
   width: 100vw;
