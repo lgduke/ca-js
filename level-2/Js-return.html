@@ -74,6 +74,42 @@
         
         <script>
             
+            function aaa() {
+                return 1234567;
+            }
+            
+            var value = aaa();
+            console.log(value);
+            
+            console.log(vat(5555555)+1);
+            
+            function vat(input) {
+                var num = (input * 1.1).toFixed(2);
+                return parseFloat(num);
+            }
+            
+            
+            console.log(tosec(2,10));
+            
+            function tosec(min1, sec1) {
+                var allsec = ((min1 * 60 * 1000) + (sec1*1000)).toFixed(2);
+                return parseFloat(allsec);
+            }
+            
+            
+            console.log(disc(10,true));
+            
+            function disc(price, first) {
+                var  laprice;
+                if (first == true) {
+                    laprice = parseFloat((price * 0.9).toFixed(1));
+                    laprice = laprice - 1.5;
+                } else {
+                    laprice = parseFloat((price * 0.9).toFixed(1));                    
+                }
+                return(laprice);
+            }
+             
             var point = 0;
             
             $('.slide-1').on('click', function() {
